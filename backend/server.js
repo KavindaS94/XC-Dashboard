@@ -1,6 +1,6 @@
-const express = require('express');
-const cors = require('cors');
-const fetch = require('node-fetch');
+import express from 'express';
+import cors from 'cors';
+import fetch from 'node-fetch';
 
 const app = express();
 const PORT = 3000;
@@ -9,7 +9,7 @@ const PORT = 3000;
 app.use(cors());
 
 app.get('/fetch-excel', async (req, res) => {
-    const url = 'https://99xtech-my.sharepoint.com/:x:/g/personal/malindar_99x_io/EUrdmRtlDJZIohXoDWHa-OcBm7Yr2j7prvE_7VzxCMg_ng?e=GkoWCu';
+    const url = 'https://99xtech-my.sharepoint.com/:x:/g/personal/kavindas_99x_io/EY-5LuE5qJhNntGQxy9urEIByRKLuMHwviWk7JrzpKiymg?e=yGqLf6';
     
     try {
         const response = await fetch(url, {
@@ -19,13 +19,14 @@ app.get('/fetch-excel', async (req, res) => {
             }
         });
 
-        if (!response.ok) {
-            throw new Error('Failed to fetch from SharePoint');
-        }
+        // if (!response.ok) {
+        //     throw new Error('Failed to fetch from SharePoint');
+        // }
 
         const data = await response.buffer();
-        res.send(data);
+        return data;
     } catch (err) {
+        console.log("err==============+>",err);
         res.status(500).send(err.message);
     }
 });
