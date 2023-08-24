@@ -1,0 +1,11 @@
+{
+    "/sharepoint": {
+      "target": "https://99xtech-my.sharepoint.com",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/sharepoint": ""
+      }
+    }
+  }
+  

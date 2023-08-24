@@ -1,0 +1,17 @@
+<table>
+    <thead>
+      <tr>
+        <th>Header1</th>
+        <th>Header2</th>
+        <!-- Add other headers as per your Excel data -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data">
+        <td>{{ row['Column1Key'] }}</td>
+        <td>{{ row['Column2Key'] }}</td>
+        <!-- Add other data columns as per your Excel data -->
+      </tr>
+    </tbody>
+  </table>
+  
