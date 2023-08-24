@@ -21,15 +21,16 @@ export class DashboardComponent implements OnInit {
 
   fetchDataFromBackend(): void {
     this.excelService.fetchExcelData()
-      .pipe(
-        catchError(error => {
-          this.error = error;
-          console.error('Error fetching data', error);
-          return of(null);  // Return null or default value if needed
-        })
-      )
+      // .pipe(
+      //   catchError(error => {
+      //     this.error = error;
+      //     console.error('Error fetching data', error);
+      //     return of(null);  // Return null or default value if needed
+      //   })
+      // )
       .subscribe(res => {
         this.data = res;
+        console.log("EXCEL====>",this.data)
       });
   }
 }
